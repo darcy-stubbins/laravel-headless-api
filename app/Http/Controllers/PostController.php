@@ -53,7 +53,9 @@ class PostController extends Controller
             $post->save(); 
             return new PostResource($post); 
         }
-        return 'You cant do this';
+        return response()->json([
+            'message' => 'you cant do this.' 
+        ]); 
     }
 
     /**
@@ -65,6 +67,8 @@ class PostController extends Controller
             $post->delete(); 
             return redirect('/api/posts'); 
         }
-        return 'you cant do this'; 
+        return response()->json([
+            'message' => 'you cant do this.' 
+        ]); 
     }
 }

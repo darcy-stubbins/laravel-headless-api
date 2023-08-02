@@ -46,7 +46,9 @@ class CommentController extends Controller
             $comment->save(); 
             return new CommentResource($comment); 
         }
-        return 'You cant do this';
+        return response()->json([
+            'message' => 'you cant do this.' 
+        ]); 
     }
 
     /**
@@ -58,6 +60,8 @@ class CommentController extends Controller
             $comment->delete(); 
             return redirect('/api/posts/'.$comment->post_id); 
         }
-        return 'you cant do this'; 
+        return response()->json([
+            'message' => 'you cant do this.' 
+        ]); 
     }
 }
