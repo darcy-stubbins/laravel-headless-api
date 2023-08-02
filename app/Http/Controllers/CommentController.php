@@ -47,7 +47,7 @@ class CommentController extends Controller
             return new CommentResource($comment); 
         }
         return response()->json([
-            'message' => 'you cant do this.' 
+            'message' => 'You can\'t do this.' 
         ]); 
     }
 
@@ -61,7 +61,7 @@ class CommentController extends Controller
             return redirect('/api/posts/'.$comment->post_id); 
         }
         return response()->json([
-            'message' => 'you cant do this.' 
+            'message' => 'You can\'t do this.' 
         ]); 
     }
 }

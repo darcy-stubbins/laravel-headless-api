@@ -54,7 +54,7 @@ class PostController extends Controller
             return new PostResource($post); 
         }
         return response()->json([
-            'message' => 'you cant do this.' 
+            'message' => 'You can\'t do this.' 
         ]); 
     }
 
@@ -68,7 +68,7 @@ class PostController extends Controller
             return redirect('/api/posts'); 
         }
         return response()->json([
-            'message' => 'you cant do this.' 
+            'message' => 'You can\'t do this.' 
         ]); 
     }
 }
