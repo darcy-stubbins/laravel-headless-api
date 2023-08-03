@@ -33,6 +33,8 @@ Route::group(['middleware' => 'auth:sanctum'], function(Router $authenticatedRou
     $authenticatedRoute->apiResource('posts', PostController::class);
 
     $authenticatedRoute->apiResource('comments', CommentController::class)->except(['index']);
+
+    $authenticatedRoute->post('/logout', [LoginController::class, 'logout']); 
 });
 
 Route::post('/login', [LoginController::class, 'login']); 

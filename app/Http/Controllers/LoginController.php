@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\LoginRequest;
 use App\Models\User;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
 class LoginController extends Controller
@@ -18,5 +19,9 @@ class LoginController extends Controller
             }
             return 'incorrect password'; 
         }
+    }
+
+    public function logout(Request $request) {
+        $request->user()->tokens()->delete(); 
     }
 }
