@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PostController;
 use App\Http\Resources\UserResource;
 use Illuminate\Http\Request;
@@ -33,4 +34,6 @@ Route::group(['middleware' => 'auth:sanctum'], function(Router $authenticatedRou
 
     $authenticatedRoute->apiResource('comments', CommentController::class)->except(['index']);
 });
+
+Route::post('/login', [LoginController::class, 'login']); 
 
